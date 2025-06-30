@@ -1,0 +1,43 @@
+html<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>虚拟现实花园 - VR Garden</title>
+    <meta name="description" content="Interactive VR Garden Experience">
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene 
+        background="color: #87CEEB"
+        vr-mode-ui="enabled: true">
+        
+        <a-assets>
+            <!-- 你的3D模型文件将在这里引用 -->
+        </a-assets>
+        
+        <!-- 基础环境 -->
+        <a-plane 
+            position="0 0 -4" 
+            rotation="-90 0 0" 
+            width="20" 
+            height="20" 
+            color="#7BC8A4">
+        </a-plane>
+        
+        <!-- 欢迎文字 -->
+        <a-text 
+            value="欢迎来到虚拟现实花园\nWelcome to VR Garden" 
+            position="0 3 -5" 
+            align="center"
+            color="#FFFFFF">
+        </a-text>
+        
+        <!-- 摄像机和控制器 -->
+        <a-entity id="rig" movement-controls position="0 1.6 3">
+            <a-entity camera look-controls wasd-controls></a-entity>
+            <a-entity laser-controls="hand: right"></a-entity>
+        </a-entity>
+        
+    </a-scene>
+</body>
+</html>
